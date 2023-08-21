@@ -28,7 +28,7 @@ Liste courte de dorks pour Google:
 | **-** | Le minus permet d'exclure un terme d'une recherche |
 | **ext** | Permet de chercher après une extension précise |
 
-*Note: Penser à utiliser aussi Bing et Yandex pour approfondir ses recherches*
+*Note: Penser à utiliser aussi Bing et Yandex pour approfondir ses recherches*  
 *Note2: Google et Yandex donnent un captcha, bing n'en a pas peu importe le nombre de requêtes*
 
 Pour voir des dorks supplémentaires, on peut voir ici :  [Google Hacking DB]('https://www.exploit-db.com/google-hacking-database')
