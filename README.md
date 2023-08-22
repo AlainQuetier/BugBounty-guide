@@ -8,12 +8,13 @@ Le but principal de ce repo est de faire une cheat sheet, ou plutôt un "pense b
 
 Pour tout ceux qui sont désireux de voir les vulnérabilités existantes dans le web et autres, mais aussi pour ceux qui veulent apprendre et revoir certains éléments oubliés.  
 
-Tout ce que vous voyez ici est a but éducatif, et ne sera en aucun cas à reproduire sur des applications web dont vous ne disposez de l'autorisation stricte de l'entité.  
-Je me décharge donc de toute responsabilité avec laquelle ces informations seront utilisées, et ne sera pas tenu pour responsable de l'acte avec laquelle vous utilisez ces informations.  
-
 ---
 
 ## Section légale
+
+Tout ce que vous voyez ici est a but éducatif, et ne sera en aucun cas à reproduire sur des applications web dont vous ne disposez de l'autorisation stricte de l'entité.  
+
+Je me décharge donc de toute responsabilité avec laquelle ces informations seront utilisées, et ne sera pas tenu pour responsable de l'acte avec laquelle vous utilisez ces informations.  
 
 Récapitulatifs sur les sanctions pénales pouvant être encourues:  
 
