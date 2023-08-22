@@ -11,6 +11,10 @@ Pour tout ceux qui sont désireux de voir les vulnérabilités existantes dans l
 Tout ce que vous voyez ici est a but éducatif, et ne sera en aucun cas à reproduire sur des applications web dont vous ne disposez de l'autorisation stricte de l'entité.  
 Je me décharge donc de toute responsabilité avec laquelle ces informations seront utilisées, et ne sera pas tenu pour responsable de l'acte avec laquelle vous utilisez ces informations.  
 
+---
+
+## Section légale
+
 Récapitulatifs sur les sanctions pénales pouvant être encourues:  
 
 Article 323-1 du code pénal:  
