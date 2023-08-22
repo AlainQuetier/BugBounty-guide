@@ -11,22 +11,22 @@ L'**Open Redirect** consiste à manipuler la valeur de ces paramètres et à red
 Un premier exemple est de regarder après les paramètres de redirection.  
 Exemple:  
 
->https://exemple.com/login?redirect=https://exemple.com/dashboard
->https://exemple.com/login?next=/dashboard
->https://exemple.com/dashboard?url=https://exemple.com/login
+>https://exemple.com/login?redirect=https://exemple.com/dashboard  
+>https://exemple.com/login?next=/dashboard  
+>https://exemple.com/dashboard?url=https://exemple.com/login  
 
 **ATTENTION**  
 Les noms de paramètres de redirection d'URL peuvent aussi ne pas être implicite.
 
 Ici je vais mettre une liste non exaustive qui sera tenue a jour pour chaque paramètre rencontré et qui corresponds à une redirection:  
 
-- ?redirect=
-- ?redir=
-- ?next=
-- ?u=
-- ?n=
-- ?RelayState=
-- ?forward=
+- ?redirect=  
+- ?redir=  
+- ?next=  
+- ?u=  
+- ?n=  
+- ?RelayState=  
+- ?forward=  
 
 S'il n'y a pas de paramètre d'URL, alors il faut prêter attention aux **Status code 3xx** tel que les **301** et **302** qui redirigent automatiquement les pages, et qui sont des redirection "**potentiellement**" vulnérable a un open redirect par "**Referer**''.
 
@@ -37,8 +37,8 @@ On peut également utiliser des Google dorks pour trouver des pages contenant de
 >inurl:"%3Dhttp" site:"exemple.com"  
 
 Ce qui nous donnera des résultats tels que :  
->http://exemple.com/buy?redir=http://exemple.com/log+in
->https://exemple.com/log?n=https://exemple.com/dashboard
+>http://exemple.com/buy?redir=http://exemple.com/log+in  
+>https://exemple.com/log?n=https://exemple.com/dashboard  
 
 Un autre exemple:  
 
@@ -49,28 +49,28 @@ Qui nous donnes des résultats tels que :
 
 Et finalement, on peut aussi chercher après le nom d'un paramètre que l'on veut:  
 
->inurl:"redirect" site:"exemple.com"
->inurl:"red" site:"exemple.com"
->inurl:"next" site:"exemple.com"  
+>inurl:"redirect" site:"exemple.com"  
+>inurl:"red" site:"exemple.com"  
+>inurl:"next" site:"exemple.com"    
 
 Qui nous donnes des résultats tels que :  
-> http://exemple.com/log?redirect=/dashboard
-> https://exemple.com/buy?next=https://exemple.com/checkout
-> https://exemple.com/pay?red=cart
+> http://exemple.com/log?redirect=/dashboard  
+> https://exemple.com/buy?next=https://exemple.com/checkout  
+> https://exemple.com/pay?red=cart  
 
 ---   
 ## Bypass de protection Open Redirect  
 
 ### Utiliser l'autocorrection du navigateur
 
-Les navigateurs modernes ont tendance à corriger la syntaxe des composants url.  
-Par exemple, toutes les urls ci dessous redirigent vers "http://evil.com"  
+Les navigateurs modernes ont tendance à corriger la syntaxe des composants url.   
+Par exemple, toutes les urls ci dessous redirigent vers "http://evil.com"   
 
->https:evil.com
->https;evil.com
->https:\\/\\/evil.com
->https:/\/\evil.com
->http:\\\\evil.com
+>https:evil.com  
+>https;evil.com  
+>https:\\/\\/evil.com  
+>https:/\/\evil.com  
+>http:\\\\evil.com  
 
 Si le validateur d'url ne prends pas le "\\" en tant que séparateur, alors on peut tenter une open redirect de ce genre :  
 
@@ -81,24 +81,24 @@ Qui va interpréter la première partie comme étant le bon endroit, et la secon
 ### Exploiter les erreurs de logique du validateur d'url
 
 En général les validateurs d'url acceptent l'url de redirection quand :   
-- L'url commence par le nom de domaine
-- L'url contient le nom de domaine
-- L'url finit par le nom de domaine
+- L'url commence par le nom de domaine  
+- L'url contient le nom de domaine  
+- L'url finit par le nom de domaine  
 
-Ce qui nous laisses des options simple pour bypass ces filtres.  
+Ce qui nous laisses des options simple pour bypass ces filtres.   
 Je donnes un exemple pour les trois validations au dessus:  
 
 Si le validateur attends que l'on ai le début de l'url, ou fin d'url alors on peut créer un sous domaine du nom de notre victime ou bien créer un dossier avec le nom de domaine de la victime.  
-> https://good.com/log?redirect=https://good.com.evil.com  
-> https://good.com/log?next=http://evil.com/good.com
+> https://good.com/log?redirect=https://good.com.evil.com   
+> https://good.com/log?next=http://evil.com/good.com  
 
 Parfois, le validateur attends que l'ont ai le début ET la fin du nom de domaine, que l'on peut bypass de cette manière:  
 
->https://good.com/buy?r=http://good.com.evil.com/good.com
+>https://good.com/buy?r=http://good.com.evil.com/good.com  
 
 Si on veut, on peut essayer de jouer avec l'url en ajoutant un "@" qui ferait que le premier fragment d'url serait considéré comme un username, et le reste comme étant le NDD a utiliser:  
 
->https://good.com/log?url=https://good.com@evil.com/good.com
+>https://good.com/log?url=https://good.com@evil.com/good.com  
 
 Il y a beaucoup de cas possible utilisable car les développeurs ne pensent pas forcément à tout les cas possible.  
 
