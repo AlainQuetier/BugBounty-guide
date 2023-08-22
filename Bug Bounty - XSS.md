@@ -62,3 +62,7 @@ On peut aussi effectuer une IDOR en volant l'id d'un compte et tenter d'accéder
 Ou bien même également RCE si on exécute les scripts avec les droits d'administrateur.
 
 Et voir aussi compromettre l'intégrité totale du site en fonction des droits des utilisateurs.
+
+---
+
+*Todo: Correctifs associés à cette Vulnérabilité*
