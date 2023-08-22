@@ -8,6 +8,8 @@ Le but principal de ce repo est de faire une cheat sheet, ou plutôt un "pense b
 
 Pour tout ceux qui sont désireux de voir les vulnérabilités existantes dans le web et autres, mais aussi pour ceux qui veulent apprendre et revoir certains éléments oubliés.  
 
+Pour plus d'informations, cliquez [ici](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
+
 ---
 
 ## Section légale
